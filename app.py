@@ -6,21 +6,14 @@ from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
 st.set_page_config(page_title="Entireview", page_icon="🚀", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 st.title("Entireview")
-st.info("Chat with the interview question docs, powered by Interview blogs", icon="📃")
+st.info("The interview prep buddy you need for your final mile", icon="📃")
 role = st.text_input("Role you are interviewing for", placeholder="Product Manager, Product Marketing Manager, Product Analyst...")
 company_name= st.text_input("Name of the company", placeholder="Enter the company's name here...")
 # role_url = st.text_input("Link to the webpage with information about the role", placeholder="Enter the description URL here...")
-intr_role= st.text_input("Role of your interviewer(s)", placeholder="Enter your interviewer's role here...")
+intr_role= st.text_input("Role of your interviewer(s)", placeholder="Enter the interviewer's role here...")
 
 openai.api_key = st.secrets.openai_key
 
-if "messages" not in st.session_state.keys():  # Initialize the chat messages history
-    st.session_state.messages = [
-        {
-            "role": "assistant",
-            "content": "Ask me a question about Streamlit's open-source Python library!",
-        }
-    ]
 
 @st.cache_resource(show_spinner=False)
 def load_data():
