@@ -55,3 +55,6 @@ if role and company_name and intr_role:
                 gen_questions = query_engine.query(query)
                 st.success("Here is what you're looking for.")
                 st.text_area("Here are the questions you can be asked:", value=gen_questions, height=400)
+
+
+#PRACTICE HERE
