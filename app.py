@@ -17,7 +17,7 @@ openai.api_key = st.secrets.openai_key
 
 @st.cache_resource(show_spinner=False)
 def load_data():
-    openai.api_key = st.secrets.openai_key
+    
     reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
     docs = reader.load_data()
     Settings.llm = OpenAI(
